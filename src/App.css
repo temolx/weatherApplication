@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;0,700;1,300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes startAnimationLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
+@keyframes startAnimationRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  background-image: url("./img/clear.jpeg");
+  background-size: cover;
+  transition: 0.5s ease-in-out;
+}
+
+form {
+  margin-top: -60px;
+}
+
+.searchBar {
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 50px;
+  background-color: rgba(247, 247, 247, 0.9);
+  box-shadow: 10px 10px 11px -4px rgba(0, 0, 0, 0.3);
+  animation: startAnimationLeft 1s ease-in-out;
+}
+
+.submitButton {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 4px 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  animation: startAnimationRight 1s ease-in-out;
+}
+
+.submitButton:hover {
+  color: black;
+  background-color: lightblue;
+}
+
+.countryInfo {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.countryName {
+  font-size: 35px;
+  animation: fadeAnimation 1s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.countryTime {
+  font-weight: 200;
+  font-size: 17px;
+  font-style: italic;
+  margin-bottom: 30px;
+  animation: fadeAnimation 2s ease-in-out;
+}
+
+.countryWeather {
+  font-size: 60px;
+  background-color: rgba(247, 247, 247, 0.17);
+  box-shadow: 10px 10px 11px -4px rgba(0, 0, 0, 0.2);
+  width: 240px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  animation: startAnimationLeft 1s ease-in-out;
+}
+
+.countryStatus {
+  font-size: 35px;
+  font-weight: 200;
+  animation: startAnimationRight 1s ease-in-out;
 }
